@@ -18,9 +18,9 @@ function draw(){
     fill(r, g, b); //färgen på cirkeln (variablerna blir random nummer)
     noStroke(); //tar bort bordern runt cirkeln
     ellipse(x, y, radius*2, radius*2); //skapar cirkeln med en width & height som e dubbelt så stor som radius
-    text("Score: " + score, 50, 50); //Skapar text med poängen, tvp sista är placering av texten
-    textSize(40)
+    scoreText();
 } 
+
 
 function mousePressed() { //funktion som sker när man klickar
     let d = dist(mouseX, mouseY, x, y); // kollar om användaren klickat i cirkeln
@@ -32,9 +32,6 @@ function mousePressed() { //funktion som sker när man klickar
         } 
         if(score == 20){
             radius /= 3;
-        }
-        if (score == 1){
-            winner();
         }
     }
 }
@@ -48,3 +45,7 @@ function newCircle(){
 }
 let interval = setInterval(newCircle, 1000); //flyttar cirkeln varje sekund
 
+function scoreText(){
+    textSize(40)
+    text("Score: " + score, 50, 50); //Skapar text med poängen, tvp sista är placering av texten
+}
