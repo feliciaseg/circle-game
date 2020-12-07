@@ -15,12 +15,16 @@ function setup() {
 
 function draw(){
     background (11, 1, 40) //Bakgrundsfärgen
-    fill(r, g, b); //färgen på cirkeln (variablerna blir random nummer)
-    noStroke(); //tar bort bordern runt cirkeln
-    ellipse(x, y, radius*2, radius*2); //skapar cirkeln med en width & height som e dubbelt så stor som radius
+    theCircle();
     scoreText();
 } 
 
+function theCircle(){
+    fill(r, g, b); //färgen på cirkeln (variablerna blir random nummer)
+    noStroke(); //tar bort bordern runt cirkeln
+    ellipse(x, y, radius*2, radius*2); //skapar cirkeln med en width & height som e dubbelt så stor som radius
+
+}
 
 function mousePressed() { //funktion som sker när man klickar
     let d = dist(mouseX, mouseY, x, y); // kollar om användaren klickat i cirkeln
@@ -46,6 +50,8 @@ function newCircle(){
 let interval = setInterval(newCircle, 1000); //flyttar cirkeln varje sekund
 
 function scoreText(){
+    fill(255,255,0)
     textSize(40)
     text("Score: " + score, 50, 50); //Skapar text med poängen, tvp sista är placering av texten
+    
 }
