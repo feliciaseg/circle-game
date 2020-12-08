@@ -17,6 +17,7 @@ function draw(){
     background (11, 1, 40) //Bakgrundsfärgen
     theCircle();
     scoreText();
+    
 } 
 
 function theCircle(){
@@ -37,7 +38,20 @@ function mousePressed() { //funktion som sker när man klickar
         if(score == 20){
             radius /= 3;
         }
+        if (score === 25) {
+            clearInterval(interval);
+            winner();
+            
+        }
     }
+}
+
+function winner() {
+    
+    text("Attention, please.", 50, 200);
+    fill(255,255,0)
+    textSize(40)
+
 }
 
 function newCircle(){
